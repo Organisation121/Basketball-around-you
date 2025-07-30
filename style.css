@@ -1,0 +1,136 @@
+body.light {
+  background-color: #e6f2ff;
+  color: #003366;
+}
+
+body.dark {
+  background-color: #001f3f;
+  color: #cce4ff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+body.light section {
+  background-color: white;
+  color: #003366;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark section {
+  background-color: #000000;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+section {
+  padding: 20px;
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+a {
+  color: #0059b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+body.dark a {
+  color: #99ccff;
+}
+
+button#modeToggle {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0059b3;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark button#modeToggle {
+  background-color: #99ccff;
+  color: #001f3f;
+}
+#turniri-section input[type="text"] {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.tournament {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.tournament:hover {
+  background: #eef6ff;
+}
+
+button {
+  background-color: #0059b3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004080;
+}
+.apply-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
+.top-section {
+  background-image: url('slika gore.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  color: white;
+}
+body.dark .tournament strong,
+body.dark .tournament em,
+body.dark .tournament span {
+  color: black;
+}
+
+

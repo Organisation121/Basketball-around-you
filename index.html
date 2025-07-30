@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basketball tournaments worldwide</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+<div class="top-section">
+  <header>
+    <h1>Basketball tournaments</h1>
+    <p>Wanna play some ball?!</p>
+    <button id="modeToggle">🌕 switch</button>
+  </header>
+
+  <section>
+    <h2>About us</h2>
+    <p>In this place you can see all basketball tournaments or pick up games at your location. If you wanna play, apply via email</p>
+  </section>
+</div>
+
+  <section>
+    <h2>Apply</h2>
+    <p>When applying write team name and squad members.
+
+Apply for games: <a href="mailto:strbacjug7@gmail.com">bballgames1@gmail.com
+ </a></p>
+  </section>
+<section id="turniri-section">
+  <h2>Search games or tournaments</h2>
+
+  <input type="text" id="searchInput" placeholder="search by location..." />
+
+  <div id="tournamentsList"></div>
+</section>
+
+  <footer>
+    <p>© 2025 bball world. all rights remain.</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+  const tournaments = [
+    {
+      name: "Letnji turnir Novi Sad",
+      date: "10. avgust 2025",
+      location: "Novi Sad",
+      description: "Turnir za amatere, prijave do 5. avgusta."
+    },
+    {
+      name: "Zimski kup Beograd",
+      date: "20. decembar 2025",
+      location: "Beograd",
+      description: "Najjači turnir zime u Beogradu."
+    },
+    {
+      name: "Prolećni turnir Niš",
+      date: "15. april 2025",
+      location: "Niš",
+      description: "Prijavi se i osvoji pehar!"
+    }
+  ];
+
+  const listDiv = document.getElementById("tournamentsList");
+  const searchInput = document.getElementById("searchInput");
+
+  function displayTournaments(filter="") {
+    listDiv.innerHTML = "";
+    const filtered = tournaments.filter(t => 
+      t.location.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    if(filtered.length === 0) {
+      listDiv.innerHTML = "<p>Nema turnira za ovu lokaciju.</p>";
+      return;
+    }
+
+    filtered.forEach((t, index) => {
+      const div = document.createElement("div");
+      div.className = "tournament";
+      div.innerHTML = `
+  <strong>${t.name}</strong> - <em>${t.date}</em> - <span>${t.location}</span>
+  <div class="details" id="details-${index}" style="display:none; margin-top:10px; color:#555;">
+    <p>${t.description}</p>
+    <a href="mailto:bballgames1@gmail.com" class="apply-button">📧 Apply</a>
+  </div>
+  <button onclick="toggleDetails(${index})" style="margin-top:5px; cursor:pointer;">More</button>
+`;
+      listDiv.appendChild(div);
+    });
+  }
+
+  function toggleDetails(index) {
+    const details = document.getElementById(`details-${index}`);
+    if(details.style.display === "block") {
+      details.style.display = "none";
+    } else {
+      details.style.display = "block";
+    }
+  }
+
+  searchInput.addEventListener("input", () => {
+    displayTournaments(searchInput.value);
+  });
+
+ searchInput.addEventListener("input", () => {
+  displayTournaments(searchInput.value);
+});
+
+</script>
+
+</body>
+</html>
